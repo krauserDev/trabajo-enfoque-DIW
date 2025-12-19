@@ -1,0 +1,245 @@
+/* reset */
+* { box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  font-family: open-sans, "Segoe UI", Roboto, "Helvetica Neue", Arial; 
+}
+
+/* colores para usar en todo el proyecto */
+:root{
+  --verde: #2f855a;
+  --gris: #6b7280;
+  --tarjeta: #ffffff;
+  --bg: #e3e6e4; 
+}
+
+html, body { 
+  background: var(--bg); 
+  color: #1f2937; 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* para que el footer siempre esté al final hago que el main ocupe todo el espacio disponible */
+main { 
+  flex: 1;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* header */
+.site-header {
+  background: #fff;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
+}
+
+/* interior del header */
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo { 
+  color: var(--verde); 
+  font-size: 1.25rem; 
+}
+
+.main-nav { 
+  margin-left: 1rem;
+}
+
+.main-nav a { 
+  margin-right: .75rem; 
+  color: var(--gris); 
+  text-decoration: none; 
+  padding: .35rem .5rem; 
+  border-radius: 6px; 
+  transition: background 0.2s ease; 
+}
+
+.main-nav a:hover {
+  background: #e5e7eb;
+}
+
+/* Destacados */
+.destacados { 
+  padding: 2rem 0; 
+  text-align:center; 
+}
+
+.destacados h2 { 
+  margin-bottom: 1rem; 
+}
+
+/* grid de 2 columnas para las tarjetas destacadas */
+.destacados-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.tarjeta-destacada {
+  background: var(--tarjeta);
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+  transition: transform 0.15s ease;
+}
+
+.tarjeta-destacada:hover {
+  transform: scale(1.02);
+}
+
+/* Productos */
+.seccion-productos { 
+  margin-top: 1.5rem; 
+}
+
+.lista-categorias { 
+  display: grid; 
+  gap: 1.25rem; 
+}
+
+/* categorías */
+.categoria {
+  background: transparent;
+}
+
+.categoria h3 { 
+  margin: .5rem 0; 
+  color: #111827; 
+  font-size:1.1rem; 
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+/* Tarjetas de productos */
+.tarjeta {
+  background: var(--tarjeta);
+  border-radius: 10px;
+  padding: .75rem;
+  text-align: left;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  transition: transform 0.15s ease;
+}
+
+.tarjeta:hover {
+  transform: scale(1.02);
+}
+
+.tarjeta img { 
+  width: 100%; 
+  height: 160px; 
+  object-fit: cover; 
+  border-radius: 8px; 
+}
+
+.tarjeta h4 { 
+  margin-top:.5rem; 
+  font-size:1rem; 
+}
+
+.tarjeta p.price { 
+  color: var(--verde); 
+  font-weight:600; 
+  margin-top:.25rem; 
+}
+
+.btn { 
+  margin-top:.5rem; 
+  display:inline-block; 
+  padding:.45rem .6rem; 
+  border-radius:8px; 
+  text-decoration:none; 
+  background:#edf7f0; 
+  color:var(--verde); 
+}
+
+/* Detalles de producto */
+.product-detail {
+  background: var(--tarjeta);
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.product-detail img { 
+  width: 100%; 
+  height: 320px; 
+  object-fit: cover; 
+  border-radius: 8px; 
+}
+
+.detail-info h2 { 
+  font-size:1.6rem; 
+  margin-bottom:.25rem; 
+}
+
+.detail-info p { 
+  color: var(--gris); 
+  line-height:1.4; 
+}
+
+.price { 
+  color: var(--verde); 
+  font-size:1.25rem; 
+  font-weight:700; 
+  margin-top:.5rem; 
+}
+
+.disponible { 
+  margin-top:.5rem; 
+  font-weight:600; 
+}
+
+.rating { 
+  margin-top:.5rem; 
+  color: #f59e0b; 
+}
+
+/* Footer */
+.footer { margin-top: 2rem; 
+  padding:1rem 0; 
+  color:var(--gris); 
+}
+
+/* Responsive */
+/* Ajustes para pantallas menores a 900px (tablets) */
+@media (max-width: 900px) {
+  .destacados-grid { 
+    grid-template-columns: 1fr; 
+  }
+  .product-grid { 
+    grid-template-columns: repeat(2,1fr); 
+  }
+  .product-detail { 
+    grid-template-columns: 1fr; 
+  }  
+}
+
+/* Ajustes para pantallas menores a 480px (móviles) */
+@media (max-width: 480px) {
+  .product-grid { 
+    grid-template-columns: 1fr; 
+  }
+  .header-inner { 
+    flex-wrap:wrap; gap:.5rem; 
+  }
+}
+
+
+
